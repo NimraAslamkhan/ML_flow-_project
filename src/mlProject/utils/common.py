@@ -9,7 +9,7 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 
-
+import logger
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -31,7 +31,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
             logger.info(f"yaml file: {path_to_yaml} loaded successfully")
             return ConfigBox(content)
     except BoxValueError:
-        raise ValueError("yaml file is empty")
+        raise ValueError("yaml file ")
     except Exception as e:
         raise e
     
